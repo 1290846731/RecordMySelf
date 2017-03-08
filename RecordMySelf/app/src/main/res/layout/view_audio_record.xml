@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:voiceView="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parent_layout"
+    android:background="@android:color/black">
+
+    <com.miaojun.record.VoiceLineView
+        android:id="@+id/voice_line"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/white"
+        voiceView:middleLine="@android:color/transparent"
+        voiceView:middleLineHeight="0dp"
+        voiceView:rectSpace="0dp"
+        voiceView:rectWidth="1dp"
+        voiceView:viewMode="line"
+        voiceView:voiceLine="@android:color/holo_red_light"/>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="开始"/>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="完成"/>
+
+
+
+</LinearLayout>

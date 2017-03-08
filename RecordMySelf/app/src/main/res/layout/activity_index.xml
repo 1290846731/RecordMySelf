@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/parent_layout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@android:color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/record_model_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="设置录制模式"
+                    android:textColor="@android:color/black"
+                    android:gravity="center_horizontal"/>
+                <RadioGroup
+                    android:id="@+id/record_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/record_model_tag"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp">
+
+                    <RadioButton
+                        android:id="@+id/record_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="声音与画面"
+                        android:textColor="@android:color/black"
+                        android:checked="true"/>
+                    <RadioButton
+                        android:id="@+id/record_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="画面"
+                        android:textColor="@android:color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/record_voice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="声音"
+                        android:textColor="@android:color/black"/>
+
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+                <TextView
+                    android:id="@+id/cut_model_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="设置剪裁模式"
+                    android:textColor="@android:color/black"
+                    android:gravity="center_horizontal"/>
+                <RadioGroup
+                    android:id="@+id/cut_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cut_model_tag">
+
+                    <RadioButton
+                        android:id="@+id/cut_none"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="不剪裁"
+                        android:textColor="@android:color/black"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/cut_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="裁掉状态栏"
+                        android:textColor="@android:color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/cut_custom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="自定义剪裁"
+                        android:textColor="@android:color/black"
+                        android:visibility="gone"/>
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/save_main_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/save_main_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是否保留原文件"
+                    android:textColor="@android:color/black"
+                    android:layout_centerVertical="true"/>
+
+                <CheckBox
+                    android:id="@+id/save_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/save_main_tag"
+                    android:checked="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/create_float_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/create_float_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是否保创建悬浮窗"
+                    android:textColor="@android:color/black"
+                    android:layout_centerVertical="true"/>
+
+                <CheckBox
+                    android:id="@+id/create_float"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/create_float_tag"
+                    android:checked="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/file_name_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="文件名称:"
+                    android:textColor="@android:color/black"
+                    android:layout_centerVertical="true"/>
+
+                <EditText
+                    android:id="@+id/file_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/file_name_tag"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/file_path"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="文件路径:"
+                android:textColor="@android:color/black"/>
+
+            <Button
+                android:id="@+id/creat_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="创建悬浮窗"/>
+
+            <Button
+                android:id="@+id/show_video_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="查看视频列表"/>
+
+            <Button
+                android:id="@+id/show_audio_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="查看音频列表"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</ScrollView>
