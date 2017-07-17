@@ -40,6 +40,14 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
                 onItemClickListener.onItemClick(v,position);
             }
         });
+        holder.nameTV.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                onItemClickListener.onLongClick(view,position);
+                return false;
+            }
+        });
+
     }
 
     @Override

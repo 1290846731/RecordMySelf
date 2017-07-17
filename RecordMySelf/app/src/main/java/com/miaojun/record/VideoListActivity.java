@@ -2,6 +2,7 @@ package com.miaojun.record;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -69,6 +70,16 @@ public class VideoListActivity extends Activity {
                 intent.putExtra("name",list.get(position).get("name"));
                 startActivity(intent);
             }
+
+            @Override
+            public void onLongClick(View v, int position) {
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.putExtra(Intent.EXTRA_STREAM,
+                        Uri.parse(list.get(position).get("path")));
+                share.setType("*/*");//此处可发送多种文件
+                startActivity(Intent.createChooser(share, "Share"));
+            }
+
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);
